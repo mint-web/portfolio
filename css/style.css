@@ -1,0 +1,135 @@
+/*Google fonts*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+/* scrollbar */
+::-webkit-scrollbar {width: 6px}
+::-webkit-scrollbar-thumb {background: #c7c6d8;border-radius: 10px;}
+::-webkit-scrollbar-track {background: #f5f5f5}
+/* animaiton */
+@keyframes slidein {
+  from {
+    transform: translateX(100%)
+  }
+
+  to {
+    transform: translateX(0%)
+  }
+}
+
+@keyframes scalein {
+  0% {
+    transform: scale(0)
+  }
+
+  100% {
+    transform: scale(1)
+  }
+}
+
+/* (공통) main layout */
+.main {position: relative;height: 100%}
+.content {height: 100%}
+.section {position: fixed;left: 270px;right: 0;top: 0;bottom: 0;z-index: 0;padding: 60px 30px;min-height: 100%;background: #f2f2fc;overflow-x: hidden;overflow-y: auto;box-sizing: border-box;}
+.section.active {z-index: 7;animation: slidein 0.6s cubic-bezier(.5, .2, .2, 1.1)}
+
+/* (공통) main content */
+.main_tit {position: relative;margin-bottom: 40px;font-size: 34px;font-weight: 800;font-family: 'Montserrat', sans-serif;}
+.main_tit:after {content: "";display: inline-flex;width: 10px;height: 10px;margin-left: 10px;border-radius: 50%;background: #eb1839;}
+.desc {color: #777491;font-weight: 500;}
+.txt {color: #312e4d;line-height: 1.5;font-weight: 300;}
+.con_tit {font-size: 24px;color: #312e4d;font-weight: 700;}
+
+/* nav */
+.aside {display: flex;flex-direction: column;justify-content: space-between;position: fixed;left: 0;top: 0;bottom: 0;padding: 60px 30px 65px 30px;width: 270px;height: 100%;background: #fff;border-right: 1px solid #e7dfec;font-family: 'Montserrat', sans-serif;}
+.aside h1 {margin-bottom: 108px;font-size: 34px;font-weight: 700;color: #312e4d;}
+.aside .nav {flex: 1}
+.aside .nav li {border-bottom: 1px solid #e9deec;font-weight: 600;}
+.aside .nav li a {display: block;font-size: 18px;color: #2f2f4b;line-height: 47px;transition: all 0.2s ease-in-out}
+.aside .nav li.active a {color: #eb1839}
+.aside .nav li a i {padding-right: 6px;}
+.aside .nav li a:hover {color: #eb1839;transform: translateX(10px)}
+.aside .mode {padding: 10px 0;border-bottom: none !important}
+.aside .mode input[type="checkbox"] {visibility: hidden;width: 0;height: 0}
+.aside .mode label {display: flex;justify-content: center;align-items: center;position: relative;width: 40px;height: 12px;background: #e0e0e0;border-radius: 100px;text-indent: -999em;cursor: pointer;}
+.aside .mode label:after {content: "";position: absolute;left: 0;top: -4px;width: 20px;height: 20px;background: #adadad;
+border-radius: 50%;transition: all 0.2s ease-in-out;}
+.aside .mode input:checked + label {background: #ea4b3c}
+.aside .mode input:checked + label:after {left: 100%;transform: translateX(-100%)}
+.aside .copyright {font-size: 13px;text-align: center;}
+
+/* Home */
+.home {z-index: 6;display: flex;flex-direction: column;justify-content: center;align-items: center;}
+.home .photo {overflow: hidden;max-width: 200px;height: 200px;margin-bottom: 20px;border-radius: 50%;border: 8px solid #fff;box-shadow: 0 0 20px rgba(0,0,0,0.1);}
+.home .name {font-size: 40px;font-weight: 700;}
+.home .desc {margin-top: 14px}
+
+/* About */
+.about .intro_txt {margin-bottom: 40px}
+.about .intro_txt .con_tit {margin-bottom: 15px;}
+.about .intro_txt .con_tit span {color: #eb1839}
+.about_info {display: flex}
+.about_info > * {flex: 0 0 50%;max-width: 50%;font-weight: 300;color: #312e4d;}
+.about_info .my_list {padding-right: 30px;}
+.about_info .my_list li {padding-bottom: 10px;margin-bottom: 10px;border-bottom: 1px solid #e9deec;}
+.about_info .my_list li span {font-weight: 500;}
+.about_info .skill_list {display: flex;align-items: center;flex-wrap: wrap;align-self: flex-start;}
+.about_info .skill_list li {margin: 10px 0 0 10px;padding: 10px 12px;width: 29%;background: #eb1839;border-radius: 30px;font-size: 14px;text-align: center;color: #fff;}
+.about_info .skill_list li:nth-child(3n+1) {margin-left: 0}
+.about_info .skill_list li.ing {background: #d5d4e4}
+.about_info02 {padding-top: 70px}
+.about_info02 .career {display: flex;justify-content: space-between;flex-wrap: wrap;}
+.about_info02 .box {flex: 0 0 49%;max-width: 49%;margin-top: 36px;padding: 20px;border: 1px solid #d5d4e4;border-radius: 20px;background: #fff;box-shadow: 0 0 20px rgba(0,0,0,0.1);}
+.about_info02 .history_list {margin-left: 10px;padding: 50px 0 15px;border-left: 1px solid #eb1838;}
+.about_info02 .history_list li {position: relative;padding: 0 0 60px 30px}
+.about_info02 .history_list li:before {content: '';position: absolute;top: 4px;left: 0;width: 10px;height: 10px;background-color: #eb1839;border-radius: 50%;box-sizing: border-box;transform: translateX(-50%);}
+.about_info02 .history_list li .year {font-size: 14px;color: #666}
+.about_info02 .history_list dl dt {margin: 4px 0 16px 0;font-size: 18px;font-weight: 700;}
+.about_info02 .history_list dl dd {margin-bottom: 4px;}
+.about_info02 .career .detail_list {padding: 30px}
+.about_info02 .career .detail_list dt {margin-bottom: 20px;font-size: 18px;font-weight: 700;}
+
+/* Portfolio */
+.portfolio .tab_wrap .list {display: flex;justify-content: center;margin-bottom: 30px}
+.portfolio .tab_wrap .list li {margin: 0 15px;font-family: 'Montserrat', sans-serif;font-weight: 700;cursor: pointer;}
+.portfolio .tab_wrap .list li.active {color: #eb1839;border-bottom:3px solid #eb1839}
+.portfolio .item_wrap {display: flex;flex-wrap: wrap;margin-left: -30px;width: 95%;margin: 0 auto;}
+.portfolio .portfolio_item {overflow: hidden;position: relative;flex: 0 0 33.33%;max-width: 33.33%;padding-left: 30px;margin-bottom: 30px;}
+.portfolio .portfolio_item .img {overflow: hidden;position: relative;height: 380px;border-radius: 12px;box-shadow: 0 0 20px rgba(0,0,0,0.1);}
+/* .portfolio .portfolio_item .img:before {content: "";position: absolute;left: 0;top: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.2)} */
+.portfolio .portfolio_item .info {position: absolute;left: 30px;top: 175px;width: calc(100% - 30px);height: 100%;padding: 20px;background: #eb1839;color: #fff;transform: translateY(100%);transition: all 0.5s ease-in-out}
+.portfolio .portfolio_item:hover .info {transform: translateY(0%)}
+.portfolio .portfolio_item .info .btn_detail {padding: 5px 15px;border: 1px solid #fff;border-radius: 30px;font-size: 14px;
+color: #fff;font-weight: 300;}
+
+/* contact */
+.contact .contact_info {width: 60%;margin: 0 auto}
+.contact .contact_info .list {display: flex;justify-content: space-between;}
+.contact .contact_info .list > * {text-align: center;color: #312e4d;}
+.contact .contact_info .list .icon {font-size: 32px;color: #eb1839;}
+.contact .contact_info .list p {margin-top: 10px;font-size: 18px;}
+.contact .contact_info .list em {display: block;padding-top: 10px;font-size: 14px;font-weight: 300;}
+.contact .form_wrap {margin-top: 80px}
+.contact .form_group {display: flex;justify-content: space-between;margin-bottom: 20px}
+.contact .form_group:nth-child(1) > * {flex: 0 0 49%;max-width: 49%;}
+.contact .form_group input,
+.contact .form_group textarea {width: 100%;padding-bottom: 10px;border: none;border-bottom: 2px solid #d3d5e4;background: none;outline: none}
+.contact .form_group input:focus,
+.contact .form_group textarea:focus {
+  border-bottom: 2px solid #eb1839;transition: all .3s ease-in-out
+}
+.contact .btn_st {padding: 0 20px;margin-top: 20px;max-width: 184px;width: 100%;background: #eb1839;border-radius: 50px;line-height: 50px;color: #fff}
+
+/* lightbox */
+.lightbox {position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: 9;background: rgba(0,0,0,0.6);
+display: none;justify-content: center;align-items: center;}
+.lightbox.open {display: flex}
+.lightbox.open .lightbox_img {padding: 40px 0;width: auto;height: auto;max-width: 100%;max-height: 800px;animation: scalein .5s ease;}
+.lightbox.open .lightbox_cont {position: relative}
+.lightbox.open .lightbox_caption {position: absolute;left: 0;bottom: 15px;width: 100%;color: #fff;
+display: flex;justify-content: space-between;}
+.lightbox.open .lightbox_close {position: absolute;right: 0;top: 0;width: 40px;height: 40px;text-align-last: center;font-size: 20px;line-height: 40px;color: #fff;cursor: pointer;}
+.lightbox.open .lightbox_controls > * {position: absolute;top: 50%;width: 40px;height: 40px;margin-top: -20px;border-radius: 50%;background: #fff;font-size: 24px;font-weight: 600;text-align: center;line-height: 40px;cursor: pointer;}
+.lightbox.open .lightbox_controls .prev {left: 30px}
+.lightbox.open .lightbox_controls .next {right: 30px}
+
