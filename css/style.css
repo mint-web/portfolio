@@ -40,6 +40,13 @@
 .txt {color: #312e4d;line-height: 1.5;font-weight: 300;}
 .con_tit {font-size: 24px;color: #312e4d;font-weight: 700;}
 
+/* (공통) table style */
+.tbl_basic {width: 100%}
+.tbl_basic thead th,
+.tbl_basic tbody td {padding: 10px 12px;color: #504e70}
+.tbl_basic thead th {background: #fdf9ff}
+.tbl_basic tbody td {border-bottom: 1px solid #d4d4e3;font-size: 14px;text-align: center}
+
 /* nav */
 .aside {display: flex;flex-direction: column;justify-content: space-between;position: fixed;left: 0;top: 0;bottom: 0;padding: 60px 30px 65px 30px;width: 270px;height: 100%;background: #fff;border-right: 1px solid #e7dfec;font-family: 'Montserrat', sans-serif;}
 .aside h1 {margin-bottom: 108px;font-size: 34px;font-weight: 700;color: #312e4d;}
@@ -99,9 +106,18 @@ border-radius: 50%;transition: all 0.2s ease-in-out;}
 /* .portfolio .portfolio_item .img:before {content: "";position: absolute;left: 0;top: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.2)} */
 .portfolio .portfolio_item .info {position: absolute;left: 30px;top: 175px;width: calc(100% - 30px);height: 100%;padding: 20px;background: #eb1839;color: #fff;transform: translateY(100%);transition: all 0.5s ease-in-out}
 .portfolio .portfolio_item:hover .info {transform: translateY(0%)}
-.portfolio .portfolio_item .info .btn_detail {padding: 5px 15px;border: 1px solid #fff;border-radius: 30px;font-size: 14px;
+.portfolio .portfolio_item .info .btn_detail {display: inline-block;margin-top: 20px;padding: 5px 15px;border: 1px solid #fff;border-radius: 30px;font-size: 14px;
 color: #fff;font-weight: 300;}
 
+/* other */
+.other .area {display: flex;flex-wrap: wrap;}
+.other .txt {margin: 10px 0 30px 0}
+.other .tbl_box,
+.other .img_box {flex:0 0 50%;max-width: 50%}
+.other .tbl_basic .icon {display: inline-block;min-width: 34px;padding: 2px 15px;border-radius: 30px;color: #fff;}
+.other .tbl_basic .icon1 {background: #eb1839}
+.other .tbl_basic .icon2 {background: #fa5b0f}
+.other .tbl_basic .icon3 {background: #2196f3}
 /* contact */
 .contact .contact_info {width: 60%;margin: 0 auto}
 .contact .contact_info .list {display: flex;justify-content: space-between;}
