@@ -45,7 +45,7 @@
 .tbl_basic thead th,
 .tbl_basic tbody td {padding: 10px 12px;color: #504e70}
 .tbl_basic thead th {background: #fdf9ff}
-.tbl_basic tbody td {border-bottom: 1px solid #d4d4e3;font-size: 14px;text-align: center}
+.tbl_basic tbody td {border-bottom: 1px solid #d4d4e3;font-size: 14px;text-align: center;}
 
 /* nav */
 .aside {display: flex;flex-direction: column;justify-content: space-between;position: fixed;left: 0;top: 0;bottom: 0;padding: 60px 30px 65px 30px;width: 270px;height: 100%;background: #fff;border-right: 1px solid #e7dfec;font-family: 'Montserrat', sans-serif;}
